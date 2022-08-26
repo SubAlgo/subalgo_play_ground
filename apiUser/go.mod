@@ -4,6 +4,8 @@ go 1.18
 
 require github.com/gin-gonic/gin v1.8.1
 
+require github.com/jinzhu/copier v0.3.5 // indirect
+
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect

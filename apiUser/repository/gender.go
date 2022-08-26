@@ -16,8 +16,8 @@ type RepoGender interface {
 }
 
 type Gender struct {
-	ID   uint
-	Name string
+	ID   uint   `json:"id"`
+	Name string `json:"name"`
 }
 
 var (
