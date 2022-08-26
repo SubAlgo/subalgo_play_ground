@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  api_user:
+    build:
+      context: .
+      dockerfile: ./Dockerfile/Dockerfile.apiUser
+    container_name: apiUser
+    volumes:
+      - './apiUser:/app'
+    working_dir: /app
+    ports:
+      - 3000:3000
+    command: go run main.go
