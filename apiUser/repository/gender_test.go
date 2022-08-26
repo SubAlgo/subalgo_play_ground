@@ -1,4 +1,4 @@
-package ropository
+package repository
 
 import (
 	"testing"
@@ -16,7 +16,7 @@ func TestGenderStoreArray(t *testing.T) {
 			{ID: 2, Name: "SE"},
 			{ID: 3, Name: "Dev"},
 		}
-		got := genderArray
+		got := GenderArray
 		assert.Equal(t, want, got)
 	})
 
@@ -52,18 +52,18 @@ func TestGenderStoreArray(t *testing.T) {
 	})
 
 	t.Run("4_GetGenders", func(t *testing.T) {
-		want := genderArray
+		want := GenderArray
 		got := g.GetGenders()
 		assert.Equal(t, want, got)
 	})
 
 	t.Run("5_Update", func(t *testing.T) {
 		// reset genderArrat
-		genderArray = []Gender{
+		GenderArray = []Gender{
 			{ID: 1, Name: "Admin"},
 			{ID: 2, Name: "SE"},
 		}
-		got := g.Update(1, "Admin1")
+		got, _ := g.Update(1, "Admin1")
 		want := "Success"
 		assert.Equal(t, want, got)
 
@@ -71,28 +71,28 @@ func TestGenderStoreArray(t *testing.T) {
 			{ID: 1, Name: "Admin1"},
 			{ID: 2, Name: "SE"},
 		}
-		assert.Equal(t, want1, genderArray)
+		assert.Equal(t, want1, GenderArray)
 
-		got = g.Update(100, "Admin1")
+		got, _ = g.Update(100, "Admin1")
 		want = "Fail"
 		assert.Equal(t, want, got)
 	})
 
 	t.Run("6_Delete", func(t *testing.T) {
 		// reset genderArrat
-		genderArray = []Gender{
+		GenderArray = []Gender{
 			{ID: 1, Name: "Admin"},
 			{ID: 2, Name: "SE"},
 			{ID: 3, Name: "Dev"},
 		}
-		_ = genderArray
+		_ = GenderArray
 		want := []Gender{
 			{ID: 1, Name: "Admin"},
 			{ID: 3, Name: "Dev"},
 		}
 		_ = want
 		g.Delete(2)
-		assert.Equal(t, want, genderArray)
+		assert.Equal(t, want, GenderArray)
 	})
 
 }
