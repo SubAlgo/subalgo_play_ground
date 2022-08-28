@@ -20,7 +20,7 @@ func main() {
 		})
 	})
 
-	r.GET("/gender", controllerGender.GetRow)
+	r.GET("/gender", controllerGender.Select)
 	r.POST("/gender", controllerGender.Create)
 	r.PATCH("/gender", controllerGender.Update)
 	r.DELETE("/gender", controllerGender.Delete)
